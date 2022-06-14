@@ -1,6 +1,8 @@
 package tutorial.blog;
 
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 import tutorial.blog.service.BlogService;
 import tutorial.blog.service.BlogMemoryDAO;
@@ -26,9 +28,13 @@ public class App2 {
 		String cmd;
 		Boolean exit=true;
 		do {
-			System.out.println("cmd>");
+			System.out.print("  cmd  >  ");
 			cmd=sc.nextLine();
-
+			Map<String, String> map =service.process(cmd);
+			Set<String> keys = map.keySet();
+			for(String key : keys) {
+				System.out.println(  key +" = " +map.get(keys));
+			}
 			
 		}while(!"exit".equalsIgnoreCase(cmd));
 	}
