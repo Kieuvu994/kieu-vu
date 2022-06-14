@@ -25,15 +25,15 @@ public class App2 {
 		
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
-		String cmd;
-		Boolean exit=true;
+		String cmd = "";
+		//Boolean exit=true;
 		do {
-			System.out.print("  cmd  >  ");
+			System.out.print("cmd  >  ");
 			cmd=sc.nextLine();
 			Map<String, String> map =service.process(cmd);
 			Set<String> keys = map.keySet();
 			for(String key : keys) {
-				System.out.println(  key +" = " +map.get(keys));
+				System.out.println(  key +" = " +map.get(key));
 			}
 			
 		}while(!"exit".equalsIgnoreCase(cmd));
